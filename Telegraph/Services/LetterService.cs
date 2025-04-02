@@ -1,6 +1,6 @@
 ﻿namespace Telegraph.Services;
 
-public class LetterService
+public sealed class LetterService
 {
     private readonly TelegraphDbContext _dbContext;
     public LetterService(TelegraphDbContext dbContext)
@@ -26,5 +26,4 @@ public class LetterService
 
         return new LetterResponse(letter.Title, letter.Author, letter.Content, letter.CreatedAtUtc.ToLocalTime());
     }
-
 }

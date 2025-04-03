@@ -21,6 +21,14 @@ app.MapPost("/letters", async (LetterService service, CreateLetterRequest reques
     return Results.Created($"/letters/{response.Slug}", response);
 });
 
+
+app.MapPut("/letters/{slug}", async (LetterService service, string slug, UpdateLetterRequest request) =>
+{
+    var response = await service.UpdateAsync(slug, request);
+    return Results.Ok(response);
+});
+
+
 app.MapGet("/letters/{slug}", async (LetterService service, string slug, CancellationToken cancellationToken) =>
 {
     var response = await service.GetAsync(slug, cancellationToken);

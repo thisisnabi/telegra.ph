@@ -24,6 +24,11 @@ public sealed class Letter
             CreatedAtUtc = DateTime.UtcNow
         };
     }
+
+    internal void Update(string content)
+    {
+        Content = content;
+    }
 }
  
 public sealed class LetterEntityConfiguration : IEntityTypeConfiguration<Letter>

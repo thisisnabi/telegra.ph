@@ -7,3 +7,5 @@ global using System.Reflection;
 global using Telegraph.Persistence;
 global using Telegraph.Services;
 global using Telegraph.Contracts;
+global using Microsoft.Extensions.Caching.Distributed;
+global using Microsoft.Extensions.Caching.Memory;
